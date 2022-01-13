@@ -1,13 +1,9 @@
 <template>
   <div class="hello" id="img">
-    <h1>{{ transfer }}</h1>
-    <p>
-      For a guide and recipes on how to configure / customize this project,<br />
-      check out the
-      <a href="https://cli.vuejs.org" target="_blank" rel="noopener"
-        >vue-cli documentation</a
-      >.
-    </p>
+    <b-button variant="success"
+      ><router-link to="/phoneview">(1)還原1張設計稿</router-link></b-button
+    >
+    <h3>{{ transfer }}</h3>
     <h3>{{ msg }}</h3>
     <b-button variant="success" @click="send">(4)子往父組件進行通訊</b-button>
     <h3>(5)封裝一個echart組件, 圖表類型隨意</h3>
@@ -42,7 +38,6 @@ export default {
   },
   mounted() {
     this.drawBar();
-    this.drawPie();
   },
   methods: {
     send() {
@@ -133,47 +128,6 @@ export default {
         ],
       });
     },
-    drawPie() {
-      let pieGraph = echarts.init(document.getElementById("pieGraph"));
-      pieGraph.setOption({
-        title: {
-          text: "某站點使用者存取來源",
-          subtext: "純屬虛構",
-          x: "center",
-        },
-        tooltip: {
-          trigger: "item",
-          formatter: "{a} <br/>{b} : {c} ({d}%)",
-        },
-        legend: {
-          orient: "vertical",
-          left: "left",
-          data: ["直接存取", "郵件行銷", "聯盟廣告", "視訊廣告", "搜尋引擎"],
-        },
-        series: [
-          {
-            name: "存取來源",
-            type: "pie",
-            radius: "55%",
-            center: ["50%", "60%"],
-            data: [
-              { value: 335, name: "直接存取" },
-              { value: 310, name: "郵件行銷" },
-              { value: 234, name: "聯盟廣告" },
-              { value: 135, name: "視訊廣告" },
-              { value: 1548, name: "搜尋引擎" },
-            ],
-            itemStyle: {
-              emphasis: {
-                shadowBlur: 10,
-                shadowOffsetX: 0,
-                shadowColor: "rgba(0, 0, 0, 0.5)",
-              },
-            },
-          },
-        ],
-      });
-    },
   },
   computed: {
     transfer() {
@@ -196,15 +150,8 @@ export default {
 h3 {
   margin: 40px 0 0;
 }
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
 a {
-  color: #42b983;
+  color: #fff;
+  text-decoration: none;
 }
 </style>

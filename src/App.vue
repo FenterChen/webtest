@@ -1,32 +1,8 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    {{ author.name }}
-    <HelloWorld msg="(4)父往子組件進行通訊" @update="updatinfo" />
+    <router-view />
   </div>
 </template>
-
-<script>
-import HelloWorld from "./components/HelloWorld.vue";
-
-export default {
-  name: "App",
-  data() {
-    return {
-      author: [],
-    };
-  },
-  components: {
-    HelloWorld,
-  },
-  methods: {
-    updatinfo(val) {
-      this.$set(this.author, val);
-      this.author = val;
-    },
-  },
-};
-</script>
 
 <style>
 #app {
@@ -35,6 +11,5 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
