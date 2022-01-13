@@ -8,14 +8,13 @@ import echarts from 'echarts'
 import router from './router'
 Vue.prototype.$echarts = echarts
 
-
 Vue.use(BootstrapVue)
 
 Vue.use(IconsPlugin)
 Vue.config.productionTip = false
 
 new Vue({
-  store,
   router,
+  store,
   render: h => h(App)
 }).$mount('#app')
