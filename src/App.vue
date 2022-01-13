@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="(4)父往子組件進行通訊" @update="updatinfo" />
     {{ author.name }}
+    <HelloWorld msg="(4)父往子組件進行通訊" @update="updatinfo" />
   </div>
 </template>
 
